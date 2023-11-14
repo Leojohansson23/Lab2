@@ -24,6 +24,7 @@ public class  Car implements Moveable {
 
         public String setmodelname(String name){return this.modelName = name;}
 
+        public int getDirection() {return Direction;}
 
         public double getEnginePower(){
             return enginePower;
@@ -40,9 +41,11 @@ public class  Car implements Moveable {
             return currentSpeed;
         }
         public boolean turboOn;
-
         public double getXpos(){return Xpos;}
         public double getYpos(){return Ypos;}
+        public double setXpos(double xpos) {return this.Xpos = xpos;}
+        public double setYpos(double ypos) {return this.Ypos = ypos;}
+
         private double trimFactor;
         public double setTrimFactor(double trim){return this.trimFactor = trim;}
         public double getTrimFactor(){return trimFactor;}

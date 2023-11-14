@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import java.awt.*;
 
-public class Volvo240Test extends TestCase {
+public class  Volvo240Test extends TestCase {
 
     @Test
     public void testspeed(){
