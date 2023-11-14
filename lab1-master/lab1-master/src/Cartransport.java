@@ -1,8 +1,8 @@
 import java.awt.*;
 
-public class Cartransport extends truck {
+public class Cartransport extends truck implements Carrier{
 
-    private boolean carrierMove;
+    private boolean carrierPos;
 
     public Cartransport(){
         setNrDoors(2);
@@ -16,17 +16,37 @@ public class Cartransport extends truck {
 
     }
 
-
+/*
     public void carrierPosMove(boolean can){
         carrierMove = can;
 
     }
-    @Override
-    public boolean getCanMove() {
-        if (carrierMove){
-            return false;
-        }
-        return true;
+
+ */
+
+    public void carrierUpp() {
+        carrierPos = false;
     }
 
+    public void carrierDown() {
+        carrierPos = true;
+    }
+
+    @Override
+    public boolean getCanMove() {
+        if (carrierPos){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void carrierHigher() {
+        carrierPos = false;
+    }
+
+    @Override
+    public void carrierLower() {
+        carrierPos = true;
+    }
 }

@@ -6,7 +6,13 @@ public class truck extends Car{
 
     public boolean setCanMove(boolean can){return this.canMove = can;}
 
-    public void carrierPosMove(){
+    //public void carrierPosMove(){
+    //}
+    public void carrierUpp(){
+
+    }
+    public void carrierDown(){
+
     }
 
 
