@@ -7,8 +7,7 @@ public class truck extends Car{
 
     public boolean setCanMove(boolean can){return this.canMove = can;}
 
-    public void carrierPosMove(){
-    }
+
 
 
     @Override

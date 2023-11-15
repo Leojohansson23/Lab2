@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Scania extends truck{
+public class Scania extends truck implements Carrier{
 
     private int angle = 0;
     private  int maxAngle = 70;
@@ -26,18 +26,26 @@ public class Scania extends truck{
         angle = degree;
 
     }
-    public void carrierPosMove(int degree){
+    @Override
+    public void carrierHigher() {
         if(getCurrentSpeed() == 0) {
-            if (degree >= minAngle && degree <= maxAngle) {
-                setangle(degree);
+            if ((getangle() + 10) <= maxAngle) {
+                setangle(getangle() + 10);
             }
-            else if(degree > maxAngle){setangle(maxAngle);
-            }
-            else{
-                setangle(minAngle);
+            else {setangle(maxAngle);
 
             }
+        }
+    }
 
+    @Override
+    public void carrierLower() {
+        if(getCurrentSpeed() == 0) {
+            if ((getangle() - 10) >= minAngle) {
+                setangle(getangle() - 10);
+            }
+            else {setangle(minAngle);
+            }
 
         }
     }
