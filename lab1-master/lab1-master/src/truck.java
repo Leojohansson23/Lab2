@@ -2,17 +2,12 @@
 public class truck extends Car{
     private boolean canMove;
 
+
     public boolean getCanMove(){return canMove;}
 
     public boolean setCanMove(boolean can){return this.canMove = can;}
 
-    //public void carrierPosMove(){
-    //}
-    public void carrierUpp(){
-
-    }
-    public void carrierDown(){
-
+    public void carrierPosMove(){
     }
 
 

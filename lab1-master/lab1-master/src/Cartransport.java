@@ -1,8 +1,16 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Cartransport extends truck implements Carrier{
 
+
+    private ArrayList<Moveable> ramparraylist = new ArrayList<>();
+
+    public ArrayList<Moveable> getRamparraylist() {
+        return ramparraylist;
+    }
     private boolean carrierPos;
+
 
     public Cartransport(){
         setNrDoors(2);
@@ -16,37 +24,41 @@ public class Cartransport extends truck implements Carrier{
 
     }
 
-/*
-    public void carrierPosMove(boolean can){
-        carrierMove = can;
-
-    }
-
- */
-
-    public void carrierUpp() {
-        carrierPos = false;
-    }
-
-    public void carrierDown() {
-        carrierPos = true;
-    }
 
     @Override
     public boolean getCanMove() {
         if (carrierPos){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
-    @Override
-    public void carrierHigher() {
-        carrierPos = false;
+    public void addcar(Moveable smallcar){
+        if (carrierPos && ramparraylist.size() <= 8) {
+
+            if(smallcar instanceof truck) {
+
+            } else {
+                ramparraylist.add(smallcar);
+            }
+        }
     }
 
-    @Override
-    public void carrierLower() {
-        carrierPos = true;
+    public int getcarsoncarrier (){
+        return ramparraylist.size();
     }
+
+    public void removecar(){
+        if (carrierPos) {
+            ramparraylist.remove(ramparraylist.size() - 1);
+        }
+
+    }
+
+
 }
+
+
+
+
+
