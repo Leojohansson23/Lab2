@@ -8,7 +8,7 @@ public class ScaniaTest extends TestCase {
     public void testhigher (){
         Scania truck = new Scania();
         truck.carrierHigher();
-        assertEquals(20,truck.getangle());
+        assertEquals(10,truck.getangle());
 
     }
 
@@ -17,7 +17,7 @@ public class ScaniaTest extends TestCase {
         Scania truck = new Scania();
         truck.carrierHigher();
         truck.carrierHigher();
-        assertEquals(10,truck.getangle());
+        assertEquals(20,truck.getangle());
 
 
     }
@@ -26,7 +26,7 @@ public class ScaniaTest extends TestCase {
     public void testscania(){
         Scania test = new Scania();
         test.carrierHigher();
-        assertEquals(true,test.getCanMove());
+        assertEquals(false,test.getCanMove());
 
 
     }

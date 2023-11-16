@@ -8,10 +8,11 @@ public class Scania extends truck implements Carrier{
 
     private int minAngle = 0;
     public Scania(){
-        setNrDoors(2);
-        setColor(Color.pink);
-        setEnginePower(200);
-        setmodelname("src.Scania");
+        super(2,200,Color.pink, "src.Scania");
+        //setNrDoors(2);
+        //setColor(Color.pink);
+        //setEnginePower(200);
+        //setmodelname("src.Scania");
         stopEngine();
         setCanMove(true);
 

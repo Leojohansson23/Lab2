@@ -1,28 +1,30 @@
 import java.awt.*;
 public class  Car implements Moveable {
 
+    public Car(int nrDoors, double enginePower, Color color,String modelName){
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = color;
+        this.modelName = modelName;
+
+    }
+
         private int Direction = 90;
         private double Xpos = 0;
         private double Ypos = 0;
-        private int nrDoors; // Number of doors on the car
+        private final int nrDoors; // Number of doors on the car
         private double enginePower; // Engine power of the car
         private double currentSpeed; // The current speed of the car
         private Color color; // Color of the car
-        private String modelName; // The car model name
+        private final String modelName; // The car model name
         public Color getColor(){return color;}
         public String getModelName(){return modelName;}
-        public void setColor(Color clr){
-            color = clr;
-        }
-        public int setNrDoors(int doors){
-            return this.nrDoors = doors;
-        }
+        public void setColor(Color clr){color = clr;}
+        //public int setNrDoors(int doors){return this.nrDoors = doors;}
         public int getNrDoors(){return nrDoors;}
-        public double setEnginePower(double power){
-                return this.enginePower = power;
-        }
+        public double setEnginePower(double power){return this.enginePower = power;}
 
-        public String setmodelname(String name){return this.modelName = name;}
+        //public String setmodelname(String name){return this.modelName = name;}
 
         public int getDirection() {return Direction;}
 

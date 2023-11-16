@@ -11,7 +11,13 @@ public class VolvoWorkshop {
         }
     }
 
-    public void returnVolvo240(){
+    public void returnVolvo240(Volvo240 V){
+        if(listVolvo.contains(V)){
+            listVolvo.remove(V);
+        }
+    }
 
+    public void listOfCars(){
+        System.out.println(listVolvo);
     }
 }

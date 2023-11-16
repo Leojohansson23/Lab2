@@ -14,11 +14,13 @@ public class SaabWorkshop {
 
         }
     }
-    public void returnSaab95(){
-
+    public <Saab95> void returnSaab95(Saab95 S){
+        if(listSaab.contains(S)){
+            listSaab.remove(S);
+        }
     }
-    public void getSaabList(){
-        //System.out.println(ListSaab);
+    public void listOfCars(){
+        System.out.println(listSaab);
     }
 
 }

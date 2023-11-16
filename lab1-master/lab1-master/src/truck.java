@@ -1,6 +1,11 @@
+import java.awt.*;
 
-public class truck extends Car{
+public abstract class truck extends Car{
     private boolean canMove;
+
+    public truck(int nrDoors, double enginePower, Color color, String modelName) {
+        super(2,275,Color.cyan, "src.truck");
+    }
 
 
     public boolean getCanMove(){return canMove;}

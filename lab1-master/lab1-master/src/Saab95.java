@@ -5,11 +5,12 @@ import java.awt.*;
 public class Saab95 extends Car{
 
     public Saab95(){
-        setNrDoors(2);
-        setColor(Color.red);
-        setEnginePower(125);
-	    turboOn = false;
-        setmodelname("src.Saab95");
+        super(2, 125, Color.red, "src.Saab95");
+        //setNrDoors(2);
+        //setColor(Color.red);
+        //setEnginePower(125);
+        //setmodelname("src.Saab95");
+        turboOn = false;
         stopEngine();
 
     }

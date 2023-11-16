@@ -16,10 +16,11 @@ public class Cartransport extends truck implements Carrier{
 
 
     public Cartransport(){
-        setNrDoors(2);
-        setColor(Color.gray);
-        setEnginePower(250);
-        setmodelname("src.Cartransport");
+        super(2,250,Color.gray, "src.Cartransport");
+        //setNrDoors(2);
+        //setColor(Color.gray);
+        //setEnginePower(250);
+        //setmodelname("src.Cartransport");
         stopEngine();
         setCanMove(true);
 
