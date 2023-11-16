@@ -31,10 +31,6 @@ public class  Main {
                 System.out.println(cartransport1.getRamparraylist());
 
 
-
-
-
-
                 SaabWorkshop SaabWOrk1 = new SaabWorkshop();
                 SaabWOrk1.SaabWorkshop(saab1);
                 //System.out.println(WorkshopListSaab);
