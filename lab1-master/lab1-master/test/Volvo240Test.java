@@ -13,6 +13,7 @@ public class  Volvo240Test extends TestCase {
         test.gas(0.2);
         test.brake(0.1);
         assertEquals(0.22499999999999998,test.getCurrentSpeed());
+
     }
 
     @Test

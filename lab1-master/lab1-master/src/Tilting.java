@@ -1,4 +1,4 @@
-public interface Carrier {
+public interface Tilting {
     void carrierHigher();
     void carrierLower();
 

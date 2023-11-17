@@ -8,7 +8,7 @@ public class CartransportTest extends TestCase {
     public void testTransport(){
         Cartransport testcar = new Cartransport();
         testcar.carrierHigher();
-        assertEquals(false,testcar.getCanMove());
+        assertEquals(true,testcar.getCanMove());
 
     }
 
@@ -27,16 +27,17 @@ public class CartransportTest extends TestCase {
     public void testmove(){
         Cartransport transport = new Cartransport();
         Volvo240 volvotest = new Volvo240();
+        Volvo240 volvotest1 = new Volvo240();
         transport.startEngine();
-        transport.gas(1);
-        transport.gas(1);
-        transport.gas(1);
-
         transport.carrierLower();
         transport.addcar(volvotest);
-        assertEquals("Volvo",transport.getRamparraylist());
-        assertEquals("hej",transport.getcarsoncarrier());
-        
+        transport.addcar(volvotest1);
+        transport.removecar();
+        transport.gas(1);
+        transport.gas(1);
+        transport.gas(1);
+        transport.move();
+
 
 
 

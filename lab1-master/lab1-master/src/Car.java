@@ -1,5 +1,5 @@
 import java.awt.*;
-public class  Car implements Moveable {
+public class Car implements Moveable {
 
     public Car(int nrDoors, double enginePower, Color color,String modelName){
         this.nrDoors = nrDoors;
@@ -8,7 +8,8 @@ public class  Car implements Moveable {
         this.modelName = modelName;
 
     }
-
+        private boolean onTruck = false;
+        private boolean canMove;
         private int Direction = 90;
         private double Xpos = 0;
         private double Ypos = 0;
@@ -20,25 +21,18 @@ public class  Car implements Moveable {
         public Color getColor(){return color;}
         public String getModelName(){return modelName;}
         public void setColor(Color clr){color = clr;}
-        //public int setNrDoors(int doors){return this.nrDoors = doors;}
         public int getNrDoors(){return nrDoors;}
         public double setEnginePower(double power){return this.enginePower = power;}
-
-        //public String setmodelname(String name){return this.modelName = name;}
-
         public int getDirection() {return Direction;}
-
         public double getEnginePower(){
             return enginePower;
         }
         public void startEngine(){
             currentSpeed = 0.1;
         }
-
         public void stopEngine(){
             currentSpeed = 0;
         }
-
         public double getCurrentSpeed(){
             return currentSpeed;
         }
@@ -47,7 +41,6 @@ public class  Car implements Moveable {
         public double getYpos(){return Ypos;}
         public double setXpos(double xpos) {return this.Xpos = xpos;}
         public double setYpos(double ypos) {return this.Ypos = ypos;}
-
         private double trimFactor;
         public double setTrimFactor(double trim){return this.trimFactor = trim;}
         public double getTrimFactor(){return trimFactor;}
@@ -80,23 +73,29 @@ public class  Car implements Moveable {
         }
     }
 
+    public boolean getCanMove(){return canMove;}
+
+    public boolean setCanMove(boolean can){return this.canMove = can;}
+
     @Override
     public void move() {
-        int value = (Direction % 360);
-        value = value / 90;
-        switch (value){
-            case 0:
-                Xpos += getCurrentSpeed();
-                break;
-            case 1:
-                Ypos += getCurrentSpeed();
-                break;
-            case 2:
-                Xpos -= getCurrentSpeed();
-                break;
-            case 3:
-                Ypos -= getCurrentSpeed();
-                break;
+        if (getCanMove()) {
+            int value = (Direction % 360);
+            value = value / 90;
+            switch (value) {
+                case 0:
+                    Xpos += getCurrentSpeed();
+                    break;
+                case 1:
+                    Ypos += getCurrentSpeed();
+                    break;
+                case 2:
+                    Xpos -= getCurrentSpeed();
+                    break;
+                case 3:
+                    Ypos -= getCurrentSpeed();
+                    break;
+            }
         }
 
     }
@@ -116,4 +115,11 @@ public class  Car implements Moveable {
 
     }
 
+    public void setOnTruck(boolean onTruck) {
+        this.onTruck = onTruck;
+    }
+
+    public boolean isOnTruck() {
+        return onTruck;
+    }
 }

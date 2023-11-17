@@ -1,10 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
-import java.math.*;
 
-public class Cartransport extends truck implements Carrier{
-
-
+public class Cartransport extends Truck implements Tilting{
 
 
      private ArrayList<Car> ramparraylist = new ArrayList<>();
@@ -17,10 +14,6 @@ public class Cartransport extends truck implements Carrier{
 
     public Cartransport(){
         super(2,250,Color.gray, "src.Cartransport");
-        //setNrDoors(2);
-        //setColor(Color.gray);
-        //setEnginePower(250);
-        //setmodelname("src.Cartransport");
         stopEngine();
         setCanMove(true);
 
@@ -34,20 +27,23 @@ public class Cartransport extends truck implements Carrier{
         return true;
     }
 
-    public void addcar(Car smallcar){
-        if(Math.abs(smallcar.getXpos() - this.getXpos()) <= 0.5 && Math.abs(smallcar.getYpos() - this.getYpos()) <= 0.5)
-            if (carrierPos && ramparraylist.size() <= 8) {
-                smallcar.setXpos(this.getXpos());
-                smallcar.setYpos(this.getYpos());
-                if(smallcar instanceof truck) {
 
-                } else {
-                    ramparraylist.add(smallcar);
+    public void addcar(Car smallcar) {
+        if (smallcar.isOnTruck() == false) {
+            if (Math.abs(smallcar.getXpos() - this.getXpos()) <= 0.5 && Math.abs(smallcar.getYpos() - this.getYpos()) <= 0.5)
+                if (carrierPos && ramparraylist.size() <= 8) {
+                    smallcar.setXpos(this.getXpos());
+                    smallcar.setYpos(this.getYpos());
+                    if (smallcar instanceof Truck) {
+
+                    } else {
+                        ramparraylist.add(smallcar);
+                        smallcar.setOnTruck(true);
+                    }
                 }
         }
-
-
     }
+
     public int getcarsoncarrier (){
         return ramparraylist.size();
     }
@@ -57,7 +53,7 @@ public class Cartransport extends truck implements Carrier{
             ramparraylist.get(ramparraylist.size() - 1).setXpos(this.getXpos() + 0.2);
             ramparraylist.get(ramparraylist.size() - 1).setYpos(this.getYpos() + 0.2);
 
-            //set xpos to something greater or lesser;
+            ramparraylist.get(ramparraylist.size()-1).setOnTruck(false);
             ramparraylist.remove(ramparraylist.size() - 1);
         }
 

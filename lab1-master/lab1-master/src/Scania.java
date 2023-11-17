@@ -1,18 +1,13 @@
 import java.awt.*;
 
-public class Scania extends truck implements Carrier{
+public class Scania extends Truck implements Tilting{
 
     private int angle = 0;
     private  int maxAngle = 70;
-    private boolean canMove = true;
 
     private int minAngle = 0;
     public Scania(){
         super(2,200,Color.pink, "src.Scania");
-        //setNrDoors(2);
-        //setColor(Color.pink);
-        //setEnginePower(200);
-        //setmodelname("src.Scania");
         stopEngine();
         setCanMove(true);
 
